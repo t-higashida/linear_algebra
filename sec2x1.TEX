@@ -1,0 +1,168 @@
+\chapter{ベクトル}
+
+
+\section{空間のベクトル}
+
+\subsection{空間のベクトル}
+
+空間の任意の2点$P,Q$を両端とする線分に$P$から$Q$への向きを指定したものを
+\textbf{有向線分}と呼び，$PQ$と書く．
+このとき$P$を\textbf{始点}，$Q$を\textbf{終点}という．
+有向線分$PQ$と$QP$とは異なる．2つの有向線分$PQ$，$RS$が
+
+\begin{list}{}{}
+\item	(1) 4点$P,Q,R,S$が同一直線上にあり，$PQ$をこの直線上で動かして$RS$に重ねることができる．
+\item (2) 4辺形$PQSR$がこの順序で平行4辺形になっている．
+\end{list}
+のいずれかを満たすとき，$PQ$と$RS$は\textbf{同値}であるといい
+$PQ \sim RS$と書く．
+$PQ \sim RS$であるとき$PQ$と$RS$を同じ類(class)に入れることによって空間のすべての
+有向線分を類別することができる．こうして生まれる各同値類を
+\textbf{幾何ベクトル}または単に\textbf{ベクトル}という．以下本書では
+ベクトル$\boldsymbol{a}, \boldsymbol{b},\boldsymbol{c}, \cdots,
+\boldsymbol{x}, \boldsymbol{y},\boldsymbol{z}$などの記号で表すことにする．
+特に始点と終点の一致した有向線分の属する類を\textbf{零ベクトル}といい，
+$\boldsymbol{0}$で表す．任意のベクトル$\boldsymbol{a}$と任意の点$P$に
+対し，有向線分$PQ$が$\boldsymbol{a}$に属するようんた点$Q$がただ1つ存在する．
+また，幾何ベクトルを表すときに$\boldsymbol{a}$の任意の代表$PQ$をとって表すことがある．
+このときは
+\[
+	\boldsymbol{a} = \overrightarrow{PQ}
+\]
+と書き，$\overrightarrow{PQ}$を$P$を始点，$Q$を終点とする\textbf{固定ベクトル}という．
+
+2つのベクトル$\boldsymbol{a},\boldsymbol{b}$を任意の代表によって
+\[
+	\boldsymbol{a} = \overrightarrow{PQ}, \quad \boldsymbol{b} = \overrightarrow{RS}
+\]
+と表したとき，$PQ \sim RS$であれば$\boldsymbol{a}$と$\boldsymbol{b}$とは\textbf{相等しい}といい
+\[
+	\boldsymbol{a} = \boldsymbol{b}
+\]
+と書く．また線分$PQ$と$RS$とが平行であれば，$\boldsymbol{a}$と$\boldsymbol{b}$とは\textbf{平行}である
+といい
+\[
+	\boldsymbol{a} \mathrel{/\!/} \boldsymbol{b}
+\]
+と書く．便宜上，零ベクトル$\boldsymbol{0}$はいかなるベクトルに対しても平行であると約束する．
+$\boldsymbol{a} = \overrightarrow{PQ}$のとき，線分$PQ$の長さをベクトル
+$\boldsymbol{a}$\textbf{の長さ}または\textbf{大きさ}といい，
+$|| \boldsymbol{a} ||$で表す．とくに長さ$1$のベクトルを\textbf{単位ベクトル}という．
+
+（保留）
+
+\subsection{1次独立，1次従属}
+
+（保留）
+
+\subsection{ベクトルの成分，座標系}
+
+（保留）
+
+\subsection{内積}
+
+2個の$\boldsymbol{0}$でないベクトル$\boldsymbol{a}, \boldsymbol{b}$に対して同一の始点
+$O$をとって$\boldsymbol{a} = \overrightarrow{OA}, \: \boldsymbol{b} = \overrightarrow{OB}$と表したとき
+\[
+	\angle AOB = \theta \quad ( 0 \leqq \theta \leqq \pi)
+\]
+をベクトル$\boldsymbol{a} , \boldsymbol{b}$の$\textbf{b}$の\textbf{なす角}という．
+これは始点$O$の選び方によらないことは明らかであろう．特に$\theta = \pi /2$のとき
+$\boldsymbol{a},\boldsymbol{b}$は\textbf{直交する}といい
+\[
+	\boldsymbol{a} \perp \boldsymbol{b} 
+\]
+と書く．また零ベクトル$\boldsymbol{0}$は，任意のベクトルと直交するものと定義する．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=6cm,height=2.5cm]{fig2x4.bmp}
+	\caption{}
+	\label{fig2x4}
+\end{figure}
+2個のベクトル$\boldsymbol{a},\boldsymbol{c}$のなす角が$\theta$であるとき，
+実数$||\boldsymbol{a} ||||\boldsymbol{b}|| \cos \theta$をベクトル
+$\boldsymbol{a}$と$\boldsymbol{b}$との\textbf{内積}または\textbf{スカラー積}といい
+$(\boldsymbol{a},\boldsymbol{b})$または$\boldsymbol{a} \cdot \boldsymbol{b}$で表す．
+すなわち
+\begin{equation}
+	(\boldsymbol{a},\boldsymbol{b}) = ||\boldsymbol{a} ||||\boldsymbol{b}|| \cos \theta
+\end{equation}
+である．これより$ \boldsymbol{a} \perp \boldsymbol{b}$であることと
+$(\boldsymbol{a},\boldsymbol{b}) = 0$とは同値である．とくに
+$\boldsymbol{a}=\boldsymbol{b}$のときには，$\theta = 0$だから
+$||\boldsymbol{a} ||^2 = (\boldsymbol{a},\boldsymbol{a})$である．定義から
+次の定理は明白である．
+
+（中略）
+
+
+\例{4}
+$\boldsymbol{a},\boldsymbol{b}$のなす角を$\theta \: (0 \leqq \theta \leqq \pi),
+\boldsymbol{a},\boldsymbol{b}$の定める並行4辺形の面積を$S$とするとき，次の等式を証明せよ．
+
+\begin{list}{}{}
+	\item	(1) $S = || \boldsymbol{a}|||| \boldsymbol{b}|| \sin \theta$.
+	\item (2) $S^2 = || \boldsymbol{a}||^2|| \boldsymbol{b}||^2 -(\boldsymbol{a}, \boldsymbol{b})^2$.
+\end{list}
+
+\証明
+$\boldsymbol{a},\boldsymbol{b}$の間の角を$\theta$とすると，
+$\boldsymbol{a},\boldsymbol{b}$の内積は，
+\[
+	(\boldsymbol{a},\boldsymbol{b}) = ||\boldsymbol{a}||||\boldsymbol{b}|| \cos \theta
+\]
+ここに$||\boldsymbol{a}||,||\boldsymbol{b}||$は，
+\[
+	||\boldsymbol{a}||=\sqrt{a_1^2 + a_2^2 },\: \boldsymbol{b} =\sqrt{b_1^2 + b_2^2}
+\]
+一方，内積は，数ベクトルとしては，次で与えられる（定理2.12の前の記述を参照）
+\[
+	(\boldsymbol{a},\boldsymbol{b})=a_1b_1 + a_2b_2
+\]
+ゆえに，
+\[
+	a_1b_1 + a_2b_2 = \sqrt{a_1^2 + a_2^2 }\sqrt{b_1^2 + b_2^2} \cos \theta
+\]
+両辺に$-1$をかけてさらに両辺に$(a_1^2+a_2^2)(b_1^2+b_2^2)$を加えると，
+\begin{align*}
+&	
+  (a_1^2 + a_2^2)(b_1^2+b_2^2)-(a_1b_1 + a_2b_2)^2
+  =
+  (a_1^2 + a_2^2)(b_1^2 + b_2^2)(1-\cos ^2 \theta) \\
+&  
+  a_1^2b_1^2 + a_1^2 b_2^2 + a_2^2 b_1^2 + a_2^2 b_2^2
+  - a_1^2b_1^2 - 2a_1b_1a_2b_2 -	a_2^2 b_2^2
+  =
+  (a_1^2 + a_2^2)(b_1^2 + b_2^2)(1-\cos ^2 \theta) \\  
+&
+ (a_1 b_2 - a_2 b_1)^2 = (a_1^2 + a_2^2)(b_1^2 + b_2^2) \sin^2 \theta  \\
+&
+ \therefore \:
+ \begin{vmatrix}
+		a_1 & a_2 \\
+    b_1 & b_2 
+	\end{vmatrix}
+ =
+ |a_1 b_2 - a_2 b_1| = \sqrt{a_1^2 + a_2^2}\sqrt{b_1^2 + b_2^2} \sin \theta
+\end{align*}
+（中略）
+
+
+次の結果は明らかである．
+
+\定理{2.12}
+上に述べた記号を用いると次の等式が成立つ．
+\begin{list}{}{}
+\item	(1) $||\boldsymbol{a} || = \sqrt{\sum_{i,j=1}^3 g_{ij} a_i a_j}$
+\item	(2) $\boldsymbol{a} \ne \boldsymbol{0}, \: \boldsymbol{b} \ne \boldsymbol{0}$で，
+
+（中略）
+\end{list}
+
+\系{}
+直交座標系に関して$\boldsymbol{a} = (a_1 , a_2 , a_3), \boldsymbol{b} = (b_1 , b_2 , b_3)$のとき
+\begin{list}{}{}
+\item	(1) $(\boldsymbol{a} , \boldsymbol{b}) = a_1 b_1 + a_2 b_2 + a_3 b_3$
+\item	(2) $||\boldsymbol{a}|| = \sqrt{a_1^2 + a_2^2  + a_3^2}$
+\item (3) （中略）
+\end{list}

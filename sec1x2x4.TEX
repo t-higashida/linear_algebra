@@ -1,0 +1,754 @@
+\subsection{行列式の性質}
+ここでは行列式の基本的な性質について説明する．
+これらの性質は行列式を実際に計算する場合に必要なものである．
+以下$A=[a_{ij}]$は$n$次行列を表す．
+
+\定理{1.9}
+転置行列の行列式は，もとの行列の行列式に相等しい．すなわち
+\[
+	|^tA|=|A|
+\]
+\証明
+\[
+	|A|=\sum \text{sgn } (p_1,p_2,\cdots,p_n) a_{1p_1}a_{2p_2}\cdots a_{np_n}
+\]
+とすれば，
+\[
+	|^tA|=\sum \text{sgn } (p_1,p_2,\cdots,p_n) a_{p_11}a_{p_22}\cdots a_{p_nn}
+\]
+となるのは明らか．いま$p_r=k$となるような$j$を$q_k$と書くことにすれば
+$a_{p_jj}=a_{kq_k}$となる．また$p_1,p_2,\cdots,q_n$は全体として$1,2,\cdots,n$に一致しているから
+\[
+	a_{p_11}	a_{p_22}	\cdots a_{p_nn}=a_{1q_1}	a_{2q_2}	\cdots	a_{nq_n}
+\]
+が成り立つ．そこで$(q_1,q_2,\cdots,q_n)$が$(1,2,\cdots,n)$に$r$回の互換を施して得られるとしよう．
+このとき$(p_1,p_2,\cdots,p_n)$に$r$回の互換を施して$(p_{q_1},p_{q_2},\cdots,p_{q_n})$，すなわち
+$(1,2,\cdots,n)$に移すことができる．この$r$回の互換を逆の順序$(1,2,\cdots,n)$に施していけば
+$(p_1,p_2,\cdots,p_n)$に到達するはずである．したがって
+\[
+	\text{sgn } (p_1,p_2,\cdots,p_n)=\text{sgn } q_1,q_2,\cdots,q_n
+\]
+であるから
+\begin{align*}
+	|^tA|	&=\sum	\text{sgn }	(p_1,p_2,\cdots,p_n)	a_{p_11}	a_{p_22}	\cdots	a_{p_nn}	\\
+				&=\sum	\text{sgn }	(q_1,q_2,\cdots,q_n)	a_{1q_1}	a_{2q_2}	\cdots	a_{nq_n}	\\
+				&=|A|.
+\end{align*}
+\■
+
+\例{22}
+$
+	\begin{vmatrix}
+		a	&	b	&	c	\\
+		d	&	e	&	f	\\
+		g	&	h	&	i
+	\end{vmatrix}
+	=
+	\begin{vmatrix}
+		a	&	d	&	g	\\
+		b	&	e	&	h	\\
+		c	&	f	&	i
+	\end{vmatrix}
+	.
+$
+
+\vspace*{3mm}
+定理1.9により行列式に関する性質で行（または列）に関して成り立つことは，
+すべて（または行）に関しても成り立つ．したがってこれから述べる諸性質においては
+行または列のいずれか一方についてのみ証明する．その際に$|A|$の定義として
+\[
+	\sum \text{sgn }(p_1,p_2,\cdots,p_n)	a_{p_11}	a_{p_22}	\cdots	a_{p_nn}
+\]
+を用いることもある．
+
+1.1.4において行列$A$をその列ベクトル$\boldsymbol{a}_j \, (j=1,2,\cdots,n)$を用いて
+\[
+	A=[\boldsymbol{a}_1 \quad \boldsymbol{a}_2	\quad \boldsymbol{a}_n]	
+\]
+の形に表したが，行列式$|A|$においても形式的に
+\[
+	|A|=|	\boldsymbol{a}_1	\boldsymbol{a}_2	\cdots	\boldsymbol{a}_n	|
+\]
+と表すことにする．$A$の行ベクトルを用いた場合の$|A|$の表示についても同様である．
+
+\定理{1.10}
+行列式で２つの列（あるいは行）を入れかえると符号が変わる．
+すなわち
+
+\begin{align*}
+	|	\boldsymbol{a}_1	\cdots	\boldsymbol{a}_j	\cdots	\boldsymbol{a}_k	\cdots	\boldsymbol{a}_n	|
+=-|	\boldsymbol{a}_1	\cdots	\boldsymbol{a}_k	\cdots	\boldsymbol{a}_j	\cdots	\boldsymbol{a}_n	|	\\
+	\text{（第$j$列と第$k$列を入れかえる）．}
+\end{align*}
+
+\証明$|A|$の第$j$列と第$k$列$(j<k)$を入れかえた行列式を$|B|$とすれば
+\begin{align*}
+		|B|	&=	\sum	\text{sgn }(p_1,\cdots,p_j,\cdots,p_k,\cdots,p_n)	a_{1p_1}	\cdots	a_{kp_j}	\cdots	a_{jp_k}	\cdots	a_{np_n}	\\	
+				&=-	\sum	\text{sgn }(p_1,\cdots,p_k,\cdots,p_j,\cdots,p_n)	a_{1p_1}	\cdots	a_{jp_j}	\cdots	a_{kp_k}	\cdots	a_{np_n}	\\
+				&=-|A|.	
+\end{align*}
+\■
+
+\例{23}
+$
+	\begin{vmatrix}
+		a	&	b	&	c	\\
+		d	&	e	&	f	\\
+		g	&	h	&	i
+	\end{vmatrix}
+	=
+	\begin{vmatrix}
+		a	&	c	&	b	\\
+		d	&	f	&	e	\\
+		g	&	i	&	h
+	\end{vmatrix}
+	=
+	\begin{vmatrix}
+		g	&	i	&	h	\\
+		d	&	f	&	e	\\
+		a	&	c	&	b
+	\end{vmatrix}
+	=
+	\begin{vmatrix}
+		g	&	h	&	i	\\
+		d	&	e	&	f	\\
+		a	&	b	&	c
+	\end{vmatrix}.
+$
+
+\系{}
+$(j_1,j_2,\cdots,j_n)$の順列とするとき，行列式$|A|$の第$1$，第$2$，$\cdots$，第$n$列
+（あるいは行）で置き換えた行列式は次のようになる．
+\[
+	\text{sgn }(j_1,j_2,\cdots,j_n)|A|.
+\]
+\証明
+$(j_1,j_2,\cdots,j_n)$が$(1,2,\cdots,n)$から$r$回の互換により得られるとすれば
+$\text{sgn }(j_1,j_2,\cdots,j_n)=(-1)^r$である．定理1.10によれば$1$回の互換で$|A|$の符号が
+変わるから，$r$回の互換では，
+\[
+	(-1)^r|A|=\text{sgn }(j_1,j_2,\cdots,j_n)|A|
+\]
+となるのは明らかである．
+
+\定理{1.11}
+行列式で2つの列（あるいは行）が一致していれば，その行列式の値は$0$である．
+
+\証明
+第$j$列と第$k$列$(j<k)$が一致しているとすれば，この2つの列をいれかえると符号が変わるから
+\begin{align*}
+		|\boldsymbol{a}_1	\cdots	\boldsymbol{a}_j	\cdots	\boldsymbol{a}_j	\cdots	\boldsymbol{a}_n|
+	=-|\boldsymbol{a}_1	\cdots	\boldsymbol{a}_j	\cdots	\boldsymbol{a}_j	\cdots	\boldsymbol{a}_n|.	\\
+	\therefore	\quad
+		|\boldsymbol{a}_1	\cdots	\boldsymbol{a}_j	\cdots	\boldsymbol{a}_j	\cdots	\boldsymbol{a}_n|=0
+\end{align*}
+\■
+
+\pagebreak
+\例{24}
+次の等式を証明せよ．ここに$\Delta$は$x_1,x_2,\cdots,x_n$の差積である．
+左辺の行列式を\textgt{バンデルモンド}(Vandermonde Alexandre Theophile {\small (1735-1796;フランス)}
+$^*$\textgt{の行列式}という．
+\[
+	\begin{vmatrix}
+		1					&	1					&	\cdots	&	1					\\
+																								\\
+		x_1				&	x_2				&	\cdots	&	x_n				\\
+																								\\
+		x_1^2			&	x_2^2			&	\cdots	&	x_n^2			\\
+		\vdots		&	\vdots		&					&	\vdots		\\
+		x_1^{n-1}	&	x_2^{n-1}	&	\cdots	&	x_n^{n-1}
+	\end{vmatrix}
+	=(-1)^{\frac{n(n-1)}{2}}\Delta
+\]
+
+\解
+行列式の定義により，左辺は$x_1,x_2,\cdots,x_n$に関する$1+2+\cdots+(n-1)=n(n-1)/2$次の
+項の和であり，$x_j=x_k$とおくと第$j$列と第$k$列が一致するから$0$となる．
+このことから左辺は$x_j-x_k$で割りきれる．一方差積の定義により右辺の次数も$n(n-1)/2$であるから
+$\alpha$を定義すれば，左辺の行列式は$\alpha\Delta$の形に表せるはずである．両辺を展開して，
+たとえば，項$x_2	x_3^2	x_n^{n-1}$の係数を比較すれば$\alpha=(-1)^{n(n-1)/2}$をうる．
+\■
+
+\定理{1.12}
+行列式で１つの列（あるいは行）の各成分が２つの数の和であるときには，その行列式はその列（あるいは行）
+の各成分をそれぞれ和の第１項，第２項で置き換えた２つの行列式の和に等しい．すなわち
+\[
+|\boldsymbol{a}_1 \cdots \boldsymbol{a}_j'+\boldsymbol{a}_j'' \cdots \boldsymbol{a}_n|
+=
+|\boldsymbol{a}_1 \cdots \boldsymbol{a}_j' \cdots \boldsymbol{a}_n|
++
+|\boldsymbol{a}_1 \cdots \boldsymbol{a}_j'' \cdots \boldsymbol{a}_n|.
+\]
+\証明
+$A$の第$j$列の成分が$a_{ij}'+a_{ij}'' \, (i=1,2,\cdots,n)$であるとしよう．
+$a_{ij}'$，$a_{ij}''$を列とする列ベクトルをそれぞれ$\boldsymbol{a}_j'$，$\boldsymbol{a}_j''$
+であるとすれば，
+\begin{align*}
+	|A|	&=|\boldsymbol{a}_1 \cdots \boldsymbol{a}_j'+\boldsymbol{a}_j'' \cdots \boldsymbol{a}_n
+			=\sum \text{sgn } (p_1,\cdots,p_j,\cdots,p_n) a_{p_11} \cdots (a_{p_jj}'+a_{p_jj}'') \cdots a_{p_nn}	\\
+			&=			\sum \text{sgn } (p_1,\cdots,p_j,\cdots,p_n) a_{p_11} \cdots a_{p_jj}' \cdots a_{p_nn}	\\
+			&\quad+	\sum \text{sgn } (p_1,\cdots,p_j,\cdots,p_n) a_{p_11} \cdots a_{p_jj}'' \cdots a_{p_nn}	\\
+			&=|\boldsymbol{a}_1 \cdots \boldsymbol{a}_j' \cdots \boldsymbol{a}_n |
+			 +|\boldsymbol{a}_1 \cdots \boldsymbol{a}_j'' \cdots \boldsymbol{a}_n|
+\end{align*}
+\■
+
+\例{25}
+\begin{align*}
+		\begin{vmatrix}
+			a+b	&	c+d	\\
+			p+q	&	r+s	
+		\end{vmatrix}
+		&=
+		\begin{vmatrix}
+			a	&	c+d	\\
+			p	&	r+s	
+		\end{vmatrix}
+		+		
+		\begin{vmatrix}
+			b	&	c+d	\\
+			q	&	r+s	
+		\end{vmatrix}	\\
+		&=
+		\begin{vmatrix}
+			a	&	c	\\
+			p	&	r	
+		\end{vmatrix}
+		+
+		\begin{vmatrix}
+			a	&	d	\\
+			p	&	s	
+		\end{vmatrix}
+		+
+		\begin{vmatrix}
+			b	&	c	\\
+			q	&	r	
+		\end{vmatrix}
+		+
+		\begin{vmatrix}
+			b	&	d	\\
+			q	&	s	
+		\end{vmatrix}.
+\end{align*}
+
+\定理{1.13}
+行列式で１つの列（あるいは行）を$\alpha$倍すれば，行列式も$\alpha$倍される．すなわち，
+\begin{align*}
+	&j\text{列}\quad\quad\quad\quad\quad\quad\quad\quad\,\,	j\text{列}	\\
+	|\boldsymbol{a}_1	\cdots	(\alpha &\cdot \boldsymbol{a}_j)	\cdots \boldsymbol{a}|=
+	\alpha	\cdot	|\boldsymbol{a}_1	\cdots	\boldsymbol{a}_j	\cdots \boldsymbol{a}|.
+\end{align*}
+
+\証明
+$|A|$の第$j$列を$\alpha$倍した行列式を$|B|$とすれば，
+\begin{align*}
+	|B|	&=	\sum \text{sgn }(p_1,\cdots,p_j,\cdots,p_n)	a_{p_11}	\cdots	(\alpha	a_{p_jj})	\cdots	a_{p_nn}	\\
+			&=	\alpha	\sum	\text{sgn }(p_1,\cdots	,p_j,	\cdots	,p_n)a_{p_11}\cdots	a_{p_jj}\cdots	a_{p_nn}	\\
+			&=	\alpha	|A|.
+\end{align*}
+
+\例{26}
+\[
+	\begin{vmatrix}
+		2	&	4	&	6	\\
+		3	&	5	&	9	\\
+		7	&	6	&	12
+	\end{vmatrix}
+	=
+	2\begin{vmatrix}
+		1	&	2	&	3	\\
+		3	&	5	&	9	\\
+		7	&	6	&	12
+	\end{vmatrix}
+	=
+	6	\begin{vmatrix}
+		1	&	2	&	1	\\
+		3	&	5	&	3	\\
+		7	&	6	&	4
+	\end{vmatrix}.
+\]
+
+\定理{1.14}
+行列式で１つの列（あるいは行）に他の列（あるいは行）を何倍かして加えても，
+行列式の値は変わらない．すなわち
+\begin{align*}
+	&j\text{列}	\quad\qquad\,\,	k\text{列}\qquad\qquad\qquad\,\,\,	j\text{列}	\quad	k\text{列}	\\
+	|\boldsymbol{a}_1	\cdots	(\boldsymbol{a}_j&+\alpha\cdot\boldsymbol{a}_k)\cdots	\boldsymbol{a}_k	\cdots \boldsymbol{a}|=
+	|\boldsymbol{a}_1	\cdots	\boldsymbol{a}_j	\cdots	\boldsymbol{a}_k	\cdots	\boldsymbol{a}_n|.	
+\end{align*}
+
+\証明
+$|A|$の第$k$列の成分を$\alpha$倍して第$j$列$(j<k)$に加えた物を$|B|$とすれば，
+定理1.11，1.12，および1.13から
+\begin{align*}
+	|B|	&=	|	\boldsymbol{a}_1	\cdots	
+						\boldsymbol{a}_j+(\alpha\cdot\boldsymbol{a}_k)	\cdots
+						\boldsymbol{a}_k	\cdots
+						\boldsymbol{a}_n
+					|	\\
+			&=	|	\boldsymbol{a}_1	\cdots	
+						\boldsymbol{a}_j	\cdots
+						\boldsymbol{a}_k	\cdots
+						\boldsymbol{a}_n
+					|
+					+
+					|	\boldsymbol{a}_1	\cdots	
+						\boldsymbol{a}_k	\cdots
+						(\alpha\cdot\boldsymbol{a}_k)	\cdots
+						\boldsymbol{a}_n
+					|	\\
+			&=	|	\boldsymbol{a}_1	\cdots	
+						\boldsymbol{a}_j	\cdots
+						\boldsymbol{a}_k	\cdots
+						\boldsymbol{a}_n
+					|
+					+
+					\alpha	|	\boldsymbol{a}_1	\cdots	
+										\boldsymbol{a}_k	\cdots
+										\boldsymbol{a}_k	\cdots
+										\boldsymbol{a}_n
+					|	\\
+			&=	|	\boldsymbol{a}_1	\cdots	
+						\boldsymbol{a}_j	\cdots
+						\boldsymbol{a}_k	\cdots
+						\boldsymbol{a}_n
+					|	\\
+			&=|A|.
+\end{align*}
+\■
+
+\例{27}
+
+$
+	\begin{vmatrix}
+		1		&	2	&	3	\\
+		-1	&	4	&	5	\\
+		2		&	3	&	4
+	\end{vmatrix}
+	\stackrel{(*)}{=}
+	\begin{vmatrix}
+		1	&	2		&	3	\\
+		0	&	6		&	8	\\
+		0	&	-1	&	-2
+	\end{vmatrix}
+	=1	\cdot	6	\cdot	(-2)	-	8	\cdot	(-1)	\cdot	1	=	-1=4.
+$
+ここに(*)は，第２行に第１行を加え，第３行に第１行の$(-2)$倍を加える操作である．
+
+\定理{1.15}
+$\boldsymbol{A}$，$\boldsymbol{B}$を$n$次正方行列とするとき，
+\[
+	|\boldsymbol{AB}|=|\boldsymbol{A}||\boldsymbol{B}|.
+\]
+\証明
+$\boldsymbol{A}=[a_{ij}]$，$\boldsymbol{B}=[b_{ij}]$，
+$\sum_{p=1}^n	a_{ip}	b_{pj}$とすれば
+\[
+	|\boldsymbol{AB}|	=	\begin{vmatrix}
+												c_{11}	&	c_{12}	&	\cdots	&	c_{1n}	\\
+												c_{21}	&	c_{22}	&	\cdots	&	c_{2n}	\\
+												\vdots	&	\vdots	&					&	\vdots	\\
+												c_{n1}	&	c_{n2}	&	\cdots	&	c_{nn}
+											\end{vmatrix}
+										=	\begin{vmatrix}
+												\displaystyle	\sum_{p_1=1}^n	a_{1p_1}b_{p_11}	&	c_{12}	&	\cdots	&	c_{1n}	\\
+																													&					&					&					\\
+												\displaystyle	\sum_{p_1=1}^n	a_{2p_1}b_{p_11}	&	c_{22}	&	\cdots	&	c_{2n}	\\
+												\vdots														&\vdots		&					&	\vdots	\\
+												\displaystyle \sum_{p_1=1}^n	a_{np_1}b_{p_11}	&	c_{n2}	&	\cdots	&	c_{nn}
+											\end{vmatrix}.
+\]
+定理1.12，次に定理1.13を用いることにより
+\[
+|AB|=\sum_{p_1=1}^n
+				\begin{vmatrix}
+					a_{1p_1}	&	c_{12}	&	\cdots	&	c_{1n}	\\
+					a_{2p_1}	&	c_{22}	&	\cdots	&	c_{2n}	\\
+					\vdots		&	\vdots	&					&	\vdots	\\
+					a_{np_1}	&	c_{n2}	&	\cdots	&	c_{nn}
+				\end{vmatrix}
+				b_{p_11}
+\]
+をうる．第２列，第３列，$\cdots$，第$n$列と同じ操作を繰り返していくと
+\[
+	\sum_{p_1=1}^n
+	\sum_{p_2=1}^n
+	\cdots
+	\sum_{p_n=1}^n
+				\begin{vmatrix}
+					a_{1p_1}	&	a_{2p_2}	&	\cdots	&	a_{np_n}	\\
+					a_{2p_1}	&	a_{2p_2}	&	\cdots	&	a_{np_n}	\\
+					\vdots		&	\vdots		&					&	\vdots		\\
+					a_{np_1}	&	a_{2p_2}	&	\cdots	&	a_{np_n}
+				\end{vmatrix}
+				b_{p_11}
+				b_{p_22}
+				\cdots
+				b_{p_nn}
+\]
+となる．この右辺は見かけ上は$n^n$個の行列式の和を表しているが，
+$p_1$，$p_2$，$\cdots$，$p_n$の中に等しいものがあれば，定理1.11から
+その行列式は$0$となるので，右辺の$\sum$は$p_1$，$p_2$，$\cdots$，
+$p_n$がすべて相異なる場合だけを考えればよい．すなわち
+$(p_1,p_2,\cdots,p_n)$が$1,2,\cdots,n$のすべての順列にわたる場合のみを
+とればよい．このとき，定理1.19の系より
+\[
+	\begin{vmatrix}
+		a_{1p_1}	&	a_{1p_2}	&	\cdots	&	a_{1p_n}	\\
+		a_{2p_1}	&	a_{2p_2}	&	\cdots	&	a_{2p_n}	\\
+		\vdots		&	\vdots		&					&	\vdots		\\
+		a_{np_1}	&	a_{np_2}	&	\cdots	&	a_{np_n}
+	\end{vmatrix}
+	=
+	\text{sgn }(p_1,p_2,\cdots,p_n)|A|
+\]
+であることに注意すれば
+\[
+	|AB|=\sum \text{sgn } (p_1,p_2,\cdots,p_n)|A|b_{p_11}b_{p_22}\cdots b_{p_nn}=|A||B|
+\]
+\■
+
+\例{28}
+	次の等式を証明せよ．
+\[
+	\begin{vmatrix}
+		b^2+c^2	&	&	ab			&	&	ca			\\
+		ab			&	&	c^2+a^2	&	&	bc			\\
+		ca			&	&	bc			&	&	a^2+b^2
+	\end{vmatrix}
+	=
+	4a^2b^2c^2.
+\]
+
+\証明
+\[
+	\begin{bmatrix}
+		b^2+c^2	&	&	ab			&	&	ca			\\
+		ab			&	&	c^2+a^2	&	&	bc			\\
+		ca			&	&	bc			&	&	a^2+b^2
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		0	&	&	c	&	&	b	\\
+		c	&	&	0	&	&	a	\\
+		b	&	&	a	&	&	0	\\
+	\end{bmatrix}
+	\begin{bmatrix}
+		0	&	&	c	&	&	b	\\
+		c	&	&	0	&	&	a	\\
+		b	&	&	a	&	&	0	\\
+	\end{bmatrix}.
+\]
+また
+\[
+	\begin{vmatrix}
+		0	&	&	c	&	&	b	\\
+		c	&	&	0	&	&	a	\\
+		b	&	&	a	&	&	0
+	\end{vmatrix}
+	=2abc.
+\]
+したがって，左辺の行列式$=(2abc)^2=4a^2b^2c^2$.
+\■
+
+次の定理は行列式の次数を下げるとおきに用いる．
+
+\定理{1.16}
+\begin{equation}
+	\begin{vmatrix}
+		a_{11}	&	0				&	\cdots	&	0				\\
+		a_{21}	&	a_{22}	&	\cdots	&	a_{2n}	\\
+		\vdots	&	\vdots	&					&	\vdots	\\
+		a_{n1}	&	a_{n2}	&	\cdots	&	a_{nn}
+	\end{vmatrix}
+	=a_{11}
+		\begin{vmatrix}
+			a_{22}	&	\cdots	&	a_{2n}	\\
+			\vdots	&					&	\vdots	\\
+			a_{n2}	&	\cdots	&	a_{nn}		
+		\end{vmatrix}
+\end{equation}
+
+\begin{equation}
+	\begin{vmatrix}
+		a_{11}	&	a_{12}	&	\cdots	&	a_{1n}	\\
+		0				&	a_{22}	&	\cdots	&	a_{2n}	\\
+		\vdots	&	\vdots	&					&	\vdots	\\
+		0				&	a_{n2}	&	\cdots	&	a_{nn}
+	\end{vmatrix}
+	=a_{11}
+		\begin{vmatrix}
+			a_{22}	&	\cdots	&	a_{2n}	\\
+			\vdots	&					&	\vdots	\\
+			a_{n2}	&	\cdots	&	a_{nn}		
+		\end{vmatrix}
+\end{equation}
+
+\証明
+
+どちらも同様であるから(1.26)を証明する．
+$p_1 \ne 1$のとき，$a_{1p_1}=0$だから
+
+\begin{align*}
+	\text{左辺}	&=\sum \text{sgn } (p_1,p_2,\cdots,p_n) a_{1p_1}a_{2p_2}\cdots	a_{np_n}	\\
+							&=\sum \text{sgn } (1,p_2,\cdots,p_n) a_{1p_1}a_{2p_2}\cdots	a_{np_n}		\\
+							&=a_{11}	\sum \text{sgn } (p_2,\cdots,p_n) a_{2p_2}\cdots	a_{np_n}			\\
+							&=\text{右辺}.
+\end{align*}
+\■
+
+\問{27}
+次の等式を証明せよ．
+\[
+	\begin{vmatrix}
+			a_{11}	&	0				&	0				&	\cdots	&	0				\\
+			a_{21}	&	a_{22}	&	0				&	\cdots	&	0				\\
+			\vdots	&	\vdots	&	a_{33}	&	\cdots	&	0				\\
+			\vdots	&	\vdots	&					&	\ddots	&	\vdots	\\
+			a_{n1}	&	a_{n2}	&					&					&	a_{nn}
+	\end{vmatrix}
+	=a_{11}	a_{22}	\cdots	a_{nn}.
+\]
+\証明
+（保留）
+\■
+
+一般に行列式を実際に計算する場合に基本となる手法は，定理1.9～定理1.14
+を用いてその行列式を(1.26)または(1.27)の左辺の形に変形して，
+定理1.16を用いてその次数を下げることである．
+
+\例{29}
+次の行列式の値を求めよ．
+\[
+	\begin{vmatrix}
+		3		&	-2	&	4		&	1	\\
+		1		&	4		&	3		&	4	\\
+		2		&	-7	&	-1	&	3	\\
+		-3	&	2		&	5		&	2
+	\end{vmatrix}.
+\]
+
+\解
+\begin{align*}
+	\text{与式}	&\stackrel{\text{(1)}}{=}
+		-\begin{vmatrix}
+				1		&	4		&	3		&	4	\\
+				3		&	-2	&	4		&	1	\\
+				2		&	-7	&	-1	&	3	\\
+				-3	&	2		&	5		&	2
+		\end{vmatrix}
+	\stackrel{\text{(2)}}{=}
+	-\begin{vmatrix}
+			1		&	4		&	3		&		4	\\
+			0		&	-14	&	-5	&	-11	\\
+			0		&	-15	&	-7	&		5	\\
+			0		&		0	&	9		&	3
+		\end{vmatrix}
+		\\
+	&
+	\stackrel{\text{(3)}}{=}
+		-\begin{vmatrix}
+			-14	&	-5	&	-11	\\
+			-15	&	-7	&	-5	\\
+				0	&	9		&	3
+		\end{vmatrix}
+	\stackrel{\text{(4)}}{=}
+	-\begin{vmatrix}
+			1		&	2		&	-6	\\
+			-15	&	-7	&	-5	\\
+			0		&	9		&	3
+		\end{vmatrix}
+	\stackrel{\text{(5)}}{=}
+	-\begin{vmatrix}
+			1		&	2		&	-6	\\
+			0		&	23	&	-95	\\
+			0		&	9		&	3
+		\end{vmatrix}
+		\\
+	&
+	\stackrel{\text{(6)}}{=}
+		-\begin{vmatrix}
+			23	&	-95	\\
+			9		&	3
+		\end{vmatrix}
+		=-(23 \times 3 + 9 \times 95)	= -924.
+\end{align*}
+ここに各操作は
+
+(1)　$(2,1)$成分が$1$であることに注目し，$(1,1)$成分を$1$にするために第1行と第2行をいれかえる．
+
+(2)　第2行を第4行に，また第1行の$(-3)$倍および$(-2)$倍をそれぞれ第2行，第3行に加える．
+
+(3)　定理1.16.
+
+(4)　$(1,1)$成分を$1$にするために第1行から第2行を引く．
+
+(5)　第1行の$15$倍を第2行に加える．
+
+(6)　定理1.16.
+
+\■
+
+\例{30}
+次ぎの行列式を因数分解せよ．
+
+\[
+	\begin{vmatrix}
+		0	&	a	&	b	&	c	\\
+		a	&	c	&	c	&	b	\\
+		b	&	c	&	0	&	a	\\
+		c	&	b	&	a	&	0
+	\end{vmatrix}.
+\]
+
+\解
+
+\begin{align*}
+		\text{与式}
+			&\stackrel{\text{(1)}}{=}		
+			(a+b+c)	\begin{vmatrix}
+								1	&	a	&	b	&	c	\\
+								1	&	0	&	c	&	b	\\
+								1	&	c	&	0	&	a	\\
+								1	&	b	&	a	&	0
+							\end{vmatrix}
+			\stackrel{\text{(2)}}{=}		
+			(a+b+c)	\begin{vmatrix}
+								1	&	a		&	b		&	c		\\
+								0	&	-a	&	c-b	&	b-c	\\
+								0	&	c-a	&	-b	&	a-c	\\
+								0	&	b-a	&	a-b	&	-c
+							\end{vmatrix}
+			\\
+			&\stackrel{\text{(3)}}{=}		
+			(a+b+c)	\begin{vmatrix}
+								-a	&	c-b	&	b-c	\\
+								c-a	&	-b	&	a-c	\\
+								b-a	&	a-b	&	-c
+							\end{vmatrix}
+			\\
+			&\stackrel{\text{(4)}}{=}
+			(a+b+c)(-a+b-c)(a-b-c) \times 
+				\begin{vmatrix}
+					1	&	0	&	b-c	\\
+					0	&	1	&	a-c	\\
+					1	&	1	&	-c
+				\end{vmatrix}
+				\\
+				&
+				\stackrel{\text{(5)}}{=}
+				(a+b+c)(-a+b-c)(a-b-c)
+				\begin{vmatrix}
+					1	&	0	&	b-c	\\
+					0	&	1	&	a-c	\\
+					0	&	1	&	-b
+				\end{vmatrix}
+				\\
+				&
+				=(a+b+c)(-a+b-c)(a-b-c)(-a-b+c)
+				\\
+				&
+				=(a+b+c)(a+b-c)(a-b+c)(a-b-c).
+\end{align*}
+ここに各操作は
+
+(1)	第2，第3，第4列を第1列に加えた後，その第1例から$a+b+c$をくくりだす．
+
+(2) 第2，第3，第4行から第1行を引く．
+
+(3) 定理1.16
+
+(4) 第3列をそれぞれ第1列，第2列に加えた後に，その第1列，第2列がそれぞれ$-a+b-c$，$a-b-c$をくくりだす．
+
+(5) 第3行から第1行を引く．
+
+\■
+
+\例{31}
+
+次の等式を証明せよ．
+
+\[
+	\begin{vmatrix}
+		1+x_1^2	&	x_1x_2	&	x_1	x_3	&	\cdots	&	x_1	x_n	\\
+		x_2x_1	&	1+x_2^2	&	x_2	x_3	&	\cdots	&	x_2	x_n	\\
+		x_3x_1	&	x_3x_2	&	1+x_3^2	&	\cdots	&	x_3	x_n	\\
+		\vdots	&	\vdots	&	\vdots	&					&	\vdots	\\
+		x_nx_1	&	x_nx_2	&	x_nx_3	&	\vdots	&	1+x_n^2
+	\end{vmatrix}
+	=
+	1+x_1^2+x_2^2+\cdots	+	x_n^2.
+\]
+
+\解
+
+\begin{align*}
+		\text{与式}
+		&	\stackrel{(1)}{=}
+			x_1^2
+			\begin{vmatrix}
+				x_1^{-2}+1	&	x_2			&	x_3			&	\cdots	&	x_n			\\
+				x_2					&	1+x_2^2	&	x_2	x_3	&	\cdots	&	x_2	x_n	\\
+				x_3					&	x_3	x_2	&	1+x_3^2	&	\cdots	&	x_3	x_n	\\
+				\vdots			&	\vdots	&	\vdots	&					&	\vdots	\\
+				x_n					&	x_n	x_2	&	x_n	x_3	&	\cdots	&	1+x_n^2
+			\end{vmatrix}
+		\\
+		&	\stackrel{(2)}{=}
+			x_1^2
+			\begin{vmatrix}
+				x_1^{-2}+1	&	-x_2 x_1^{-2}	&	-x_3	x_1^{-2}	&	\cdots	&	-x_n x_1^{-2}	\\
+				x_2					&	1							&	0								&	\cdots	&	0							\\
+				x_3					&	0							&	1								&	\cdots	&	0							\\
+				\vdots			&	\vdots				&	\vdots					&					&	\vdots				\\
+				x_n					&	0							&	0								&	\cdots	&	1
+			\end{vmatrix}
+		\\
+		&	\stackrel{(3)}{=}
+			\begin{vmatrix}
+				1+x_1^2			&	-x_2	&	-x_3	&	\cdots	&	-x_n		\\
+				x_2					&	1							&	0				&	\cdots	&	0				\\
+				x_3					&	0							&	1				&	\cdots	&	0				\\
+				\vdots			&	\vdots				&	\vdots	&					&	\vdots	\\
+				x_n					&	0							&	0				&	\cdots	&	1
+			\end{vmatrix}
+		\\
+		&	\stackrel{(4)}{=}
+			\begin{vmatrix}
+				1+x_1^2+x_2^2+\cdots+x_n^2	&	0				&	0				&	\cdots	&	0				\\
+				x_2													&	1				&	0				&	\cdots	&	0				\\
+				x_3													&	0				&	1				&	\cdots	&	0				\\
+				\vdots											&	\vdots	&	\vdots	&					&	\vdots	\\
+				x_n													&	0				&	0				&	\cdots	&	1
+			\end{vmatrix}
+		\\
+		&	\stackrel{(5)}{=}
+			(1+x_1^2+x_2^2+\cdots+x_n^2)
+			\begin{vmatrix}
+				1				&	0				&	\cdots	&	0				\\
+				0				&	1				&	\cdots	&	0				\\
+				\vdots	&	\vdots	&					&	\vdots	\\
+				0				&	0				&	\cdots	&	1
+			\end{vmatrix}
+		\\
+		&	=
+			1+x_1^2+x_2^2+\cdots+x_n^2.
+\end{align*}
+ここに各操作は
+
+(1)　第1行および第1列から$x_1$をくくりだす．
+
+(2)　第1行の$x_2$倍，$x_3$倍，$\cdots$，$x_n$倍をそれぞれ第$2$列，第$3$列，$\cdots$，
+第$n$列から引く．
+
+(3)　第1行に$x_1^2$を入れる．
+
+(4)　第1行に，第2行の$x_2$倍，第3行の$x_3$倍，$\cdots$，第$n$行の$x_n$倍を加える．
+
+(5)　定理1.16.
+
+\■
+
+\注意{}
+数学的帰納法を適用して証明することもできる．

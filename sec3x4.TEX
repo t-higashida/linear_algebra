@@ -1,0 +1,48 @@
+\section{内積が定義された線形空間}
+
+
+\subsection{}
+\subsection{}
+\subsection{直交空間，正規直交基底}
+
+内積が定義された線形空間$V$の任意の空でない部分集合$A$に対し，
+$V$の部分集合$A^\perp$を
+\[
+	A^\perp = \{ \boldsymbol{v} \in V \: | (\boldsymbol{u},\boldsymbol{v}) = 0 , \boldsymbol{u} \in A \}
+\]
+と定義すると，$A^\perp \ni \boldsymbol{v}, \boldsymbol{v}' , \R \ni \alpha$に対し，
+$A \ni \boldsymbol{u}$ならば
+\begin{align*}
+	(\boldsymbol{u} , \boldsymbol{v} + \boldsymbol{v}' 
+& = (\boldsymbol{u}, \boldsymbol{v}) + (\boldsymbol{u}, \boldsymbol{v}')
+  = 0 + 0 =0, \\
+   ( \boldsymbol{u} , \alpha \cdot \boldsymbol{v} ) 
+& = \alpha ( \boldsymbol{u}, \boldsymbol{v} ) = \alpha 0 = 0
+\end{align*}
+が成り立つから，$A^\perp$は$V$の部分空間となる．この$A^\perp$を
+\textbf{$A$と直交する$V$の部分空間}という．また，$\boldsymbol{v}$が$A^\perp$の元のとき，
+$\boldsymbol{v} \perp A$と書く．とくに$A$が$V$の部分空間のとき，
+\textbf{$A^\perp$を$A$の直交補（部分）空間}という．
+
+\例{4}
+(1) $V$をない積の定義された線形空間，$A$を$V$の部分集合，
+（中略）
+
+いままで実線形空間について議論を進めてきたが，複素線形空間では
+内積$(\boldsymbol{u}\boldsymbol{v})$のかわりに
+\textbf{エルミート積}$\langle\boldsymbol{u}.\boldsymbol{v}\rangle$を
+次のように定義する．
+
+\begin{list}{}{}
+	\item	(11)$'$ $\langle\boldsymbol{u},\boldsymbol{v}\rangle \geqq 0$，
+かつ$\langle\boldsymbol{u},\boldsymbol{v}\rangle = 0$となるのは$\boldsymbol{u} = \boldsymbol{0}$のときに限る．
+	\item (12)$'$ $\langle\boldsymbol{u},\boldsymbol{v}\rangle = \overline{\langle\boldsymbol{v},\boldsymbol{u}\rangle }$，
+($\overline{\langle\boldsymbol{v},\boldsymbol{u}\rangle }$は$\langle\boldsymbol{u},\boldsymbol{v}\rangle$の複素共役)
+	\item (13)$'$ $\langle\boldsymbol{u},\boldsymbol{v+w}\rangle = \langle\boldsymbol{u},\boldsymbol{v}\rangle + \langle\boldsymbol{u},\boldsymbol{w}\rangle$
+	\item (14)$'$ $\langle \alpha \cdot \boldsymbol{u},\boldsymbol{v+w}\rangle = \alpha \langle\boldsymbol{u},\boldsymbol{v}\rangle$,
+                $\langle \boldsymbol{u},\alpha \cdot \boldsymbol{v+w}\rangle = \overline{\alpha} \langle\boldsymbol{u},\boldsymbol{v}\rangle$
+\end{list}
+このとき，$\boldsymbol{u}$のノルムを$||\boldsymbol{u} = \sqrt{\langle \boldsymbol{u}, \boldsymbol{u} \rangle}$と定義すれば，
+ノルムの性質についての定理3.6の成立することが容易に示されるから，直交，正規直交系などの概念が
+導入され，したがって，内積が定義された線形空間において成立する事柄は，エルミート積の定義された
+複素線形空かにおいても成立することになる．

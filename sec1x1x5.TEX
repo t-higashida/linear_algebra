@@ -1,0 +1,250 @@
+\subsection{いろいろな正方行列}
+
+ここでは$A=[a_{ij}]$は$n$次正方行列を表すものとする．
+
+$A$の対角成分$a_{11},a_{22},\cdots,a_{nn}$以外の成分がすべて$0$である行列
+\[
+	A=\begin{bmatrix}
+			a_{11}	&	0				&	\cdots	&	0	\\
+			0				&	a_{22}	&	\cdots	&	0	\\
+			\vdots	&	\vdots	&	\ddots	&	\vdots	\\
+			0				&	0				&	\cdots	&	a_{nn}
+		\end{bmatrix}
+\]
+を\textgt{対角行列}という．単位行列$I_n$は明らかに対角行列であるが，
+特に$\alpha$をスカラーとして$\alpha \cdots I_n$の形に表すことができる対角行列
+\[
+	\alpha \cdot	I_n
+		=\begin{bmatrix}
+			\alpha	&	0				&	\cdots	&	0	\\
+			0				&	\alpha	&	\cdots	&	0	\\
+			\vdots	&	\vdots	&	\ddots	&	\vdots	\\
+			0				&	0				&	\cdots	&	\alpha
+		\end{bmatrix}
+\]
+を\textgt{スカラー行列}という．
+
+\問{10}
+２つの対角行列の和および積はまた対角行列であり，その積はつねに交換可能である．
+\証明
+（保留）
+\■
+
+\問{11}
+$A$がすべての$n$次行列と交換可能であるための必要十分条件は$A$がスカラー行列であることである．
+\証明
+（保留）
+\■
+
+\[
+	A=\begin{bmatrix}
+			a_{11}	&	a_{12}	&	\cdots	&	a_{1n}	\\
+			0				&	a_{22}	&	\cdots	&	a_{2n}	\\
+			\vdots	&	\vdots	&					&	\vdots	\\
+			0				&	0				&	\cdots	&	a_{nn}	\\
+		\end{bmatrix}
+\]
+を\textgt{上３角行列}という．同様に，対角成分より上の成分がすべて$0$の行列を
+\textgt{下３角行列}という．
+
+\問{12}
+2つの上（下）３角行列の和および積はまた上（下）３角行列である．
+\証明
+（保留）
+\■
+
+\begin{equation}
+	^tA=A	\text{，成分では　}	a_{ji}=a_{ij}
+\end{equation}
+を満たす正方行列$A$を\textgt{対角行列}という．また
+\begin{equation}
+	^tA=-A	\text{，成分では　}	a_{ji}=-a_{ij}
+\end{equation}
+を満たす正方行列$A$を\textgt{交代行列}という．定義から交代行列の対角成分はすべて$0$になる．
+
+\例{10}
+\[
+\begin{bmatrix}
+	a		&	b	&	c	\\
+	b		&	d	&	e	\\
+	c		&	e	&	f	\\
+\end{bmatrix}
+	\text{は対角行列，}
+\begin{bmatrix}
+	0		&	a		&	-b	&	c		\\	
+	-a	&	0		&	d		&	-e	\\
+	-b	&	-d	&	0		&	f		\\
+	-c	&	-e	&	f		&	0		\\
+\end{bmatrix}
+	\text{は交代行列である．}
+\]
+
+\例{11}
+任意の正方行列$A$は対角行列と交代行列との和として表すことができる．
+
+\解
+\[
+	A=\frac{1}{2}	\cdot	(A+^tA)+\frac{1}{2}	\cdot	(A-^tA)
+\]
+とすれば，$(1/2)	\cdot	(A+^tA)$は対角行列，$(1/2)	\cdot	(A-^tA)$は交代行列である．
+\■
+
+\問{13}
+次ぎの行列を対称行列と交代行列の和として表せ．
+\[
+	\begin{bmatrix}
+		3	&	2	&	5	\\
+		6	&	7	&	4	\\
+		9	&	8	&	1	
+	\end{bmatrix}
+\]
+\解
+（保留）
+\■
+
+複素行列$A$が
+\begin{equation}
+	A^*	=A	\text{，成分では　}	\overline{a}_{ji}=A_{ij}
+\end{equation}
+を満たすとき$A$を\textgt{エルミート}{\small	Hermite,Charles	(1822-1901)フランス	}
+\textgt{行列}という．$A$がエルミート行列でかつ実行列ならば，$A$は対称行列である．
+したがってエルミート行列において成り立つ性質は対称行列においても成り立つ．
+
+\例{12}
+\[
+	\begin{bmatrix}
+		1			&	2-3i	&	4i		\\
+		2+3i	&	4			&	3-2i	\\
+		-4i		&	3+2i	&	0
+	\end{bmatrix}
+	\text{　はエルミート行列である．}
+\]
+
+\問{14}
+$A$，$B$はエルミート（対称）行列ならば$A+B$，$AB+BA$もエルミート（対称）行列である．
+また$AB$がエルミート（対称）行列である必要十分条件は$A$，$B$が交換可能であることである．
+
+\解
+	（保留）
+\■
+
+\問{15}
+２つの交代行列$A$，$B$の積$AB$が対称行列になる必要十分条件は，$A$，$B$が交換可能であることである．
+
+\解
+	（保留）
+\■
+
+\問{16}
+$A$を対称（交代）行列，$T$を任意の正方行列とするとき，$^TAT$もまた対称（交代）行列である．
+
+\解
+	（保留）
+\■
+
+\問{17}
+$x=[x_1	\quad	x_2	\quad	\cdots	\quad	x_n]$に対して
+\begin{list}{}{}
+		\item	(1)	　$x$を実行ベクトルとして$x^tx$を求めよ．
+		\item	(2)	　$x$を実行複素行ベクトルとして$xx^*$を求めよ．
+\end{list}
+\解
+	（保留）
+\■
+
+$A$が$n$次行列のとき，$AA$もまた$n$次行列になる．これを$A^2$と書いて
+\textgt{$A$の$2$乗}という．一般に$A$の$r$個の積もまた$n$次行列になるがこれを
+$A^r$と書き{$A$の$r$乗}という．特に$A^0=I$と定義する．このとき負でない整数
+$r$，$s$に対して
+\[
+	A^r A^s = A^s A^r = A^{r+s}	\text{，　}	(A^r)^s=A^{rs}
+\]
+が成り立つ．また，$A$，$B$が交換可能ならば
+\[
+	(AB)^r=A^rB^r.
+\]
+
+\問{18}
+次のような２次行列$A$を求めよ．
+\[
+	\text{(1)}	\quad	A^2=I_2	\qquad\qquad\qquad
+	\text{(2)}	\quad	A^2=A		\qquad\qquad\qquad
+	\text{(3)}	\quad A^2=O_2
+\]
+\解
+	（保留）
+\■
+
+\問{19}
+\[
+	A=\begin{bmatrix}
+			\alpha	&	1				&	0				&	0				\\
+			0				&	\alpha	&	1				&	0				\\
+			0				&	0				&	\alpha	&	1				\\
+			0				&	0				&	0				&	\alpha	\\
+		\end{bmatrix}
+	\text{　のとき}
+	A^r
+	\text{　を求めよ（$r$は不でない整数）．}
+\]
+\解
+	（保留）
+\■
+
+$A$が実行列で
+\begin{equation}
+	^tAA=A^tA=I_n
+\end{equation}
+を満たすとき，$A$を\textgt{直行行列}という．(1.12)の各辺の$(i,j)$成分を比較すれば
+\begin{equation}
+	\sum_{k=1}^n	a_{ki}	a_{kj}	=	\sum_{k=1}^n	a_{ik}	a_{jk}	= \delta_{ij}
+\end{equation}
+を満たす行列が直行行列である．
+
+$A$が複素行列で
+\begin{equation}
+	A^*A=AA^*=I_n
+\end{equation}
+を満たすとき，$A$を\text{ユニタリ}行列という．成分では
+\begin{equation}
+	\sum_{k=1}^n	\overline{a}_{ki}	a_{kj}	=	\sum_{k=1}^n	a_{kj}	\overline{a}_{ki}	
+\end{equation}
+を満たす行列がユニタリ行列である．特別な場合として，$A$がユニタリ行列で
+かつ実行列ならば$A$は直行行列にほかならない．したがって，
+ユニタリ行列において成り立つ性質は直行行列においても成り立つ．
+
+\例{13}
+\[
+	\begin{bmatrix}
+		\cos \theta	&	-\sin \theta	\\
+		\sin \theta	&	\cos 	\theta
+	\end{bmatrix}
+	,
+	\quad
+	\begin{bmatrix}
+		\frac{1}{\sqrt{2}}	&	\frac{1}{\sqrt{3}}	&	\frac{1}{\sqrt{6}}	\\
+												&											&											\\
+		-\frac{1}{\sqrt{2}}	&	\frac{1}{\sqrt{3}}	&	\frac{1}{\sqrt{6}}	\\
+												&											&											\\
+		0										&	\frac{1}{\sqrt{3}}	&	-\frac{2}{\sqrt{6}}	\\
+	\end{bmatrix}
+	\text{　は直行行列．}
+\]
+
+\例{14}
+\[
+	\begin{bmatrix}
+		\cos \theta		&	i\sin \theta	\\
+		i\sin \theta	&	\cos 	\theta
+	\end{bmatrix}
+	,
+	\quad
+	\begin{bmatrix}
+		\frac{1}{\sqrt{2}}	&	\frac{1}{\sqrt{3}}	&	\frac{1}{\sqrt{6}}	\\
+												&											&											\\
+		0										&	\frac{i}{\sqrt{3}}	&	\frac{2i}{\sqrt{6}}	\\
+												&											&											\\
+		\frac{1}{\sqrt{2}}	&	-\frac{1}{\sqrt{3}}	&	\frac{1}{\sqrt{6}}
+	\end{bmatrix}
+	\text{　はユニタリ行列である．}
+\]

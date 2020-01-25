@@ -1,0 +1,22 @@
+\section{線形写像の合成（積）とその応用}
+
+\subsection{線形写像の積}
+
+\定理{4.5}
+$V,V',V''$を線形空間，$f$を$V$から$V'$の中への線形写像，
+$g$を$V'$から$V''$の中への線形写像とすると，$f,g$の合成
+$g \circ f$は$V$から$V''$の中への線形写像である．
+
+\証明
+任意の$\boldsymbol{u},\boldsymbol{v} \in V$，スカラー$\alpha$に対し
+\begin{align*}
+	(g \circ f) (\boldsymbol{u} + \boldsymbol{v})
+&= g(f(\boldsymbol{u}) + f(\boldsymbol{v}))
+ = g(f(\boldsymbol{u})) + g(f(\boldsymbol{v})) \\
+&= (g \circ f)(\boldsymbol{u}) + (g \circ f)(\boldsymbol{v}), \\
+	(g \circ f)
+&= g(f(\alpha \cdot \boldsymbol{u}))
+ = g(\alpha \cdot f(\boldsymbol{u}))
+ = \alpha \cdot  g(f(\boldsymbol{u})) \\
+&= \alpha \cdot  (g \circ f) (\boldsymbol{u}) \\
+\end{align*}

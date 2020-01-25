@@ -1,0 +1,100 @@
+\chapter{線形写像}
+
+
+\section{線形写像の定義}
+
+\subsection{写像}
+
+集合$A$の任意の元$a$に集合$B$のただ1つの元$b$を対応させるとき，この
+対応$f$を$A$から$B$の中の\textbf{写像}といい
+\[
+	b=f(a) \text{　または　} b=a^f
+\]
+と書き，$b$を$f$による\textbf{$a$の像}という．また，
+$A' \subset A , B' \subset B$に対し，
+$A$の部分集合$f^{-1}(B')$，$B$の部分集合$f(A')$を
+\begin{align*}
+	f^{-1} (B') = \{ \: a \in A \: | \: f(a) \in B' \: \} \\
+  f(A') = \{ \: b \in B \: | \: b=f(a), a \in A' \: \}
+\end{align*}
+と定義し，$f(A')$を$A'$の$f$による\textbf{像}，$f^{-1}(B')$を$B'$の$f$による
+\textbf{完全逆像}と呼ぶ．
+特に，$B'$が1つの元$b$からなるとき，$f^{-1}(B') = f^{-1}(\{b\})$を
+単に$f^{-1} (b)$と書くことにする．さて，$f$を$A$から$B$への写像とする．
+$f(A)=B$のとき，$f$を$A$から$B$の\textbf{上への}写像または\textbf{全射}
+といい，また$B$の任意の元$b$に対し，“$f^{-1}(b)$が空集合またはただ1つの元
+からなる”とき，$f$を$A$から$B$の中への\textbf{1対1の写像}または\textbf{単射}
+という．$f$が$A$から$B$の上への1対1の写像のとき\textbf{全単射}という．
+$f$が$A$から$B$の中への写像，$g$が$B$から$C$の中への写像で，
+\[
+	b = f(a) , \: c = g(b) , \: a \in A
+\]
+とすると，$a$に対応させるとこの対応は$A$から$C$の中への写像となる．
+この写像を$f$と$g$の\textbf{合成（写像）}といって$ g \circ f$で表す．
+
+$A,B$が線形空間のとき，$A$から$B$の中への写像を\textbf{作用素}または\textbf{演算子}
+ということもある．
+
+さて，ここでは写像のなかでもっとも重要と思われる線形写像についてふれることにする．
+
+いま$V,V'$を線形空間とする．$V$から$V'$への中への写像$f$が次の条件
+\begin{list}{}{}
+	\item	(1) 任意の$\boldsymbol{x},\boldsymbol{y} \in V$に対し
+\[
+	f(\boldsymbol{x} + \boldsymbol{y}) = f(\boldsymbol{x}) + f(\boldsymbol{y})
+\]
+	\item および
+  \item (2) 任意の$\boldsymbol{x} \in V$，スカラー$\alpha$に対し
+\[
+	f(\alpha \cdot \boldsymbol{x}) = \alpha \cdot f(\boldsymbol{x})
+\]
+\end{list}
+を満たすとき，$f$を\textbf{線形写像}（または1次写像）であるという．
+
+特に，$V=V'$，すなわち$f$が$V$から$V$の中への線形写像のとき，
+$f$を$V$の\textbf{1次変換}という．
+
+$f$が線形写像のとき
+\[\textstyle
+	f\left( \sum_{i=1}^n	\alpha_i \boldsymbol{x}_i\right) = 
+  \sum_{i=1}^n	\alpha_i f(\boldsymbol{x}_i)
+\]
+が成り立つ．また，$f(\boldsymbol{0}) = f(\boldsymbol{0}) + f(\boldsymbol{0})$から
+\[
+  f(\boldsymbol{0}) = \boldsymbol{0}
+\]
+となる．ただし，左辺の$\boldsymbol{0}$は$V$の零ベクトル，右辺の$\boldsymbol{0}$は
+$V'$の零ベクトルを表す．
+
+\注意{}
+“$f(\boldsymbol{x}) = \boldsymbol{0}$ならば$\boldsymbol{x} = \boldsymbol{0}$”であるとは
+限らない．
+
+\subsection{線形写像の例}
+
+（保留）
+
+\subsection{線形写像に関する定理}
+
+（保留）
+
+\subsection{線形写像の核と像}
+
+$V,V'$を線形空間，$f$を$V$から$V'$の中への線形写像とする．
+$V$の部分空間$W$の元$\boldsymbol{w}_1 , \boldsymbol{w}_2$とスカラー$\alpha$に対し
+\[
+	\boldsymbol{w}_1 + \boldsymbol{w}_2 \in W, \alpha \cdot \boldsymbol{w}_1 \in W
+\]
+が成り立ち，したがって
+\begin{align*}
+	f(\boldsymbol{w}_1) + f(\boldsymbol{w}_2) = f(\boldsymbol{w}_1 + \boldsymbol{w}_2) \in f(W) \\
+  \alpha \cdot f(\boldsymbol{w}_1) = f(\alpha \cdot \boldsymbol{w}_1) \in f(W)  
+\end{align*}
+なることから，$f(W)$は$V'$の部分空間となる．同様にして，$V'$の部分空間$W$に対し
+$f^{-1}(W')$は$V$の部分空間となる．
+
+\問{2}
+$f^{-1} (W')$が$V$の部分空間となることを示せ．
+
+特に$W'=\{\boldsymbol{0} \}$のとき，$f^{-1} (W')$を線形写像$f$の\textbf{核}といい，
+$\text{Kernel } f, \text{ker } f$または$f^{-1}(\boldsymbol{0})$などで表す．

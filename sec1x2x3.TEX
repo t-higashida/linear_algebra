@@ -1,0 +1,170 @@
+\subsection{行列式の定義}
+$n$次正方行列
+\[
+	A=\begin{bmatrix}
+			a_{11}	&	a_{12}	&	\cdots	&	a_{1n}	\\
+			a_{21}	&	a_{22}	&	\cdots	&	a_{2n}	\\
+			\vdots	&	\vdots	&					&	\vdots	\\
+			a_{n1}	&	a_{n2}	&	\cdots	&	a_{nn}
+		\end{bmatrix}
+\]
+に対し次の和を考える．
+\begin{equation}
+	\sum \text{sgn } (p_1,p_2,\cdots,p_n)	a_{1p_1}a_{2p_2}\cdots a_{np_n}
+\end{equation}
+ここに$\sum$は$1,2,\cdots,n$のすべての順列$(p_1,p_2,\cdots p_n)$についての$n!$個の
+和をとるものとする．(1.25)を\textgt{$n$次正方行列$A$の行列式}と呼び
+\[
+	\begin{vmatrix}
+			a_{11}	&	a_{12}	&	\cdots	&	a_{1n}	\\
+			a_{21}	&	a_{22}	&	\cdots	&	a_{2n}	\\
+			\vdots	&	\vdots	&					&	\vdots	\\
+			a_{n1}	&	a_{n2}	&	\cdots	&	a_{nn}		
+	\end{vmatrix}
+	\text{または}|A| \text{または} \text{det }A
+\]
+などで表す．
+
+行列$A$の第$i$行，第$j$列および$(i,j)$成分をそれぞれそのまま行列式$|A|$の
+\textgt{第$i$行}，\textgt{第$j$列}および\textgt{$(i,j)$成分}という．
+
+\例{20}
+
+$n=2$のとき，例18を用いると
+\begin{align*}
+	\begin{vmatrix}
+		a_{11}	&	a_{12}	\\
+		a_{21}	&	a_{22}
+	\end{vmatrix}
+	&=
+	\text{sgn }(1,2)a_{11}a_{22}+\text{sgn }(2,1) a_{12}a_{21}	\\
+	&=a_{11}a_{22}-a_{12}a_{21}.		
+\end{align*}
+
+\例{21}
+$n=3$のとき，例19を用いると
+\begin{align*}
+		\begin{vmatrix}
+		a_{11}	&	a_{12}	&	a_{13}	\\
+		a_{21}	&	a_{22}	&	a_{23}	\\
+		a_{31}	&	a_{32}	&	a_{33}	\\
+	\end{vmatrix}
+	&				=	\text{sgn }(1,2,3) a_{11}a_{22}a_{33}+\text{sgn }(2,3,1) a_{12}a_{23}a_{31}	\\
+	&\quad	+	\text{sgn }(3,1,2) a_{13}a_{21}a_{32}+\text{sgn }(3,2,1) a_{13}a_{22}a_{31}	\\
+	&\quad	+	\text{sgn }(2,1,3) a_{12}a_{21}a_{33}+\text{sgn }(1,3,2) a_{11}a_{23}a_{32}	\\
+	&				=	a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}	\\
+	&\quad	-	a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{23}a_{32}	
+\end{align*}
+
+\pagebreak
+\注意{}
+$n=2$，$n=3$のときは，それぞれ(1.19)および(1.23)と一致している．一般に行列式の値を実際に求めるのに
+定義(1.25)をそのまま用いるのは大変であり，そのためには次の1.2.4でのべる行列式のいろいろな性質を
+用いた方が便利である．しかしながら，$n=2$と$n=3$のときには，
+\textgt{サラス}{\small (Sarrus,Pierre Frederic (1798-1861;フランス))}\textgt{の方法}と呼ばれる
+次の図のような規則がある．これらの方法は4次以上の行列式には適用できない．
+
+\begin{figure}[htb]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(7,7)(0,0)
+	\put(-2,6){$n=2$のとき}
+	\put(-1.9,4.5){$
+	\begin{matrix}
+		a_{11}	&	&	a_{12}	\\
+						&	&					\\
+		a_{21}	&	&	a_{22}
+	\end{matrix}
+	$}
+	\put(-1.5,4.9){\line(1,-1){0.8}}
+	\put(-1.5,4.1){\line(1,1){0.8}}
+
+	\put(-1.8,3.8){\line(-1,-1){0.8}}
+	\put(-0.4,3.8){\line( 1,-1){0.8}}
+
+	\put(-2.8,2.8){$\small -$}
+	\put( 0.4,2.8){$\small +$}
+	
+	\put( 5,6){$n=3$のとき}
+	\put(4.7,3.0){$
+	\begin{matrix}
+		a_{11}	&	&	a_{12}	&	&	a_{13}	\\
+						&	&					&	&					\\
+		a_{21}	&	&	a_{22}	&	&	a_{23}	\\
+						&	&					&	&					\\
+		a_{31}	&	&	a_{32}	&	&	a_{33}	\\
+						&	&					&	&					\\
+		a_{11}	&	&	a_{12}	&	&	a_{13}	\\
+						&	&					&	&					\\
+		a_{21}	&	&	a_{22}	&	&	a_{23}
+	\end{matrix}
+	$}
+	\put( 5.1,5.1){\line(1,-1){0.8}}
+
+	\put( 5.1,4.0){\line(1,-1){0.8}}
+	\put( 6.3,4.0){\line(1,-1){0.8}}
+
+	\put( 5.1,2.9){\line(1,-1){0.8}}
+	\put( 6.3,2.9){\line(1,-1){0.8}}
+	\put( 7.5,2.9){\line(1,-1){0.8}}
+
+
+	\put( 6.3,1.8){\line(1,-1){0.8}}
+	\put( 7.5,1.8){\line(1,-1){0.8}}
+
+	\put( 7.5,0.7){\line(1,-1){0.8}}
+
+	\put( 7.1,5.1){\line(-1,-1){0.8}}
+
+	\put( 7.1,4.0){\line(-1,-1){0.8}}
+	\put( 5.9,4.0){\line(-1,-1){0.8}}
+
+	\put( 7.1,2.9){\line(-1,-1){0.8}}
+	\put( 5.9,2.9){\line(-1,-1){0.8}}
+	\put( 4.7,2.9){\line(-1,-1){0.8}}
+
+	\put( 5.9,1.8){\line(-1,-1){0.8}}
+	\put( 4.7,1.8){\line(-1,-1){0.8}}
+
+	\put( 4.7,0.7){\line(-1,-1){0.8}}
+
+	\put( 3.6,1.8){$\small -$}
+	\put( 3.6,0.7){$\small -$}
+	\put( 3.6,-0.3){$\small -$}
+	
+	\put( 8.3,1.8){$\small +$}
+	\put( 8.3,0.7){$\small +$}
+	\put( 8.3,-0.3){$\small +$}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\vspace*{3mm}
+
+\問{25}次の行列式の値を求めよ．
+
+$\qquad\qquad
+(1)\quad 	\begin{vmatrix}
+						3	&	5	\\
+						2	&	8
+					\end{vmatrix}
+\qquad
+(2)\quad
+	\begin{vmatrix}
+		1	&	2	&	3	\\
+		4	&	5	&	6	\\
+		7	&	8	&	9	\\
+	\end{vmatrix}
+$
+
+\問{26}
+次の等式を証明せよ．
+\[
+	\begin{vmatrix}
+		a	&	b	&	c	\\
+		c	&	a	&	b	\\
+		b	&	c	&	a
+	\end{vmatrix}
+	=a^3+b^3+c^3-3abc
+\]
